@@ -88,6 +88,7 @@ export default function ContactForm() {
     console.log('Datos del formulario:', form);
     setModalOpen(true);
     setForm({ name: '', email: '', phone: '', destination: '', message: '' });
+    setTouched({ name: false, email: false, phone: false, destination: false, message: false });
   };
 
   return (

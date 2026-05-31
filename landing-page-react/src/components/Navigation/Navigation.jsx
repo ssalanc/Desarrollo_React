@@ -1,14 +1,20 @@
 import { useState } from 'react';
 import './Navigation.css';
 
-export default function Navigation() {
+export default function Navigation({ onNavigate, currentPage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLinkClick = () => {
+  const handleDesignSystemClick = (e) => {
+    e.preventDefault();
+    if (onNavigate) onNavigate('design-system');
+    setIsMenuOpen(false);
+  };
+
+  const handleMenuClick = () => {
     setIsMenuOpen(false);
   };
 
@@ -22,17 +28,20 @@ export default function Navigation() {
         </div>
 
         <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#home" onClick={handleLinkClick} className="nav-link">
+          <a href="#home" onClick={handleMenuClick} className="nav-link">
             Inicio
           </a>
-          <a href="#destinos" onClick={handleLinkClick} className="nav-link">
+          <a href="#destinos" onClick={handleMenuClick} className="nav-link">
             Destinos
           </a>
-          <a href="#servicios" onClick={handleLinkClick} className="nav-link">
+          <a href="#servicios" onClick={handleMenuClick} className="nav-link">
             Servicios
           </a>
-          <a href="#contacto" onClick={handleLinkClick} className="nav-link">
+          <a href="#contacto" onClick={handleMenuClick} className="nav-link">
             Contacto
+          </a>
+          <a href="#design-system" onClick={handleDesignSystemClick} className={`nav-link ${currentPage === 'design-system' ? 'active' : ''}`}>
+            Design System
           </a>
         </div>
 

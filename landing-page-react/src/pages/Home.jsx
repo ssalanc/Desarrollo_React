@@ -75,7 +75,7 @@ export default function Home() {
         <div className="hero-content">
           <h1>Descubre el Mundo con TravelGo</h1>
           <p>Tus aventuras soñadas comenzarán aquí. Explora destinos increíbles a precios inigualables.</p>
-          <Button variant="secondary" size="large" onClick={scrollToForm}>
+          <Button variant="primary" size="large" onClick={scrollToForm}>
             Contáctenos
           </Button>
         </div>

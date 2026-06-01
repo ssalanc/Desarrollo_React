@@ -1,207 +1,290 @@
-# 🌍 Landing Page - Viajes con React + Vite
+# 🌍 Landing Page - TravelGo con React
 
-Una landing page moderna y responsive sobre viajes, desarrollada con **React** y **Vite**, siguiendo una arquitectura escalable y componentes reutilizables.
+Una landing page moderna y responsive desarrollada con **React** y **Vite**, siguiendo una arquitectura escalable y componentes reutilizables.
+
+## 📋 Objetivo de la Actividad
+
+Desarrollar una landing page funcional utilizando React que incluya:
+- ✅ Diseño visual organizado y responsive
+- ✅ Componentes reutilizables
+- ✅ Formulario funcional con validaciones en frontend
+- ✅ Navegación clara y estructura bien definida
+- ✅ Design System documentado
+- ✅ Despliegue público del proyecto
+- ✅ Repositorio en GitHub organizado
 
 ## 📁 Estructura del Proyecto
 
 ```
 src/
-├── assets/                  # Imágenes, fuentes e íconos
-│   ├── images/
-│   ├── fonts/
-│   └── icons/
 ├── components/              # Componentes reutilizables
-│   ├── Button/
-│   │   ├── Button.jsx
-│   │   └── Button.css
-│   ├── Card/
-│   │   ├── Card.jsx
-│   │   └── Card.css
-│   ├── Navigation/
-│   │   ├── Navigation.jsx
-│   │   └── Navigation.css
-│   └── Footer/
-│       ├── Footer.jsx
-│       └── Footer.css
+│   ├── Button/              # Botones con variantes
+│   ├── Card/                # Tarjetas de destinos
+│   ├── Icon/                # Iconos SVG
+│   ├── Modal/               # Modal popup
+│   ├── Navigation/          # Barra de navegación
+│   ├── ContactForm/         # Formulario de contacto
+│   └── Footer/              # Pie de página
 ├── pages/                   # Vistas completas
-│   ├── Home.jsx
-│   └── Home.css
+│   ├── Home.jsx             # Página de inicio
+│   └── DesignSystem.jsx     # Documentación del DS
 ├── layouts/                 # Plantillas de página
-│   └── MainLayout.jsx
+│   └── MainLayout.jsx       # Layout principal
 ├── styles/                  # Estilos globales
 │   └── global.css
-├── App.jsx
+├── App.jsx                  # Componente raíz
 ├── App.css
 └── main.jsx
 ```
 
-## ✨ Características
+## 🎨 Componentes Desarrollados
 
-✅ **Diseño Responsive** - Adaptado para móvil, tablet y desktop  
-✅ **Menú Hamburguesa** - Navegación responsive que se convierte en hamburguesa en pantallas pequeñas  
-✅ **Componentes Reutilizables** - Button, Card, Navigation, Footer  
-✅ **Formulario con Validaciones** - Contacto/Reserva con validación en frontend  
-✅ **Secciones Organizadas**:
-   - Hero section atractivo
-   - Servicios destacados
-   - Destinos populares con cards
-   - Formulario de contacto
-   - Footer con información
-
-✅ **Animaciones Suaves** - Transiciones y hover effects  
-✅ **Colores Personalizados** - Paleta moderna y coherente
-
-## 🚀 Guía de Inicio Rápido
-
-### 1. Instalar Dependencias
-```bash
-npm install
-```
-
-### 2. Ejecutar en Desarrollo
-```bash
-npm run dev
-```
-
-El proyecto se abrirá en `http://localhost:5173`
-
-### 3. Build para Producción
-```bash
-npm run build
-```
-
-### 4. Vista Previa de Producción
-```bash
-npm run preview
-```
-
-## 🎨 Componentes
-
-### Button
+### 1. Button
 Componente de botón reutilizable con múltiples variantes.
 
-**Props:**
-- `variant`: primary, secondary, accent, outline
-- `size`: small, medium, large
-- `disabled`: boolean
-- `type`: button, submit, reset
-- `onClick`: función callback
+**Variantes disponibles:**
+- `primary` - Botón principal (azul)
+- `accent` - Botón destacado (amarillo)
+- `outline` - Botón con borde
 
-```jsx
-<Button variant="primary" size="large">
-  Explorar
-</Button>
-```
+**Tamaños:**
+- `small` - 8px 16px
+- `medium` - 12px 24px (por defecto)
+- `large` - 16px 32px
 
-### Card
-Componente para mostrar destinos con imagen, título, descripción y precio.
+**Estados:**
+- Normal, Hover, Disabled
+
+### 2. Card
+Componente para mostrar destinos/servicios.
 
 **Props:**
 - `image`: URL de la imagen
-- `title`: Título del destino
+- `title`: Título
 - `description`: Descripción
 - `price`: Precio (opcional)
 - `rating`: Calificación (opcional)
 
-```jsx
-<Card
-  image="url"
-  title="París, Francia"
-  description="Descripción..."
-  price={1200}
-  rating={4.8}
-/>
-```
+**Características:**
+- Zoom en hover
+- Rating con ícono
+- Precio destacado
 
-### Navigation
-Barra de navegación con menú responsivo y hamburguesa en mobile.
+### 3. Icon
+Componente de iconos reutilizable.
+
+**Tipos disponibles:**
+- `flights` - Avión
+- `hotel` - Hotel
+- `car` - Auto
+- `compass` - Brújula
+
+**Tamaños:** small, medium, large
+
+### 4. Modal
+Componente modal para alertas y confirmaciones.
+
+**Props:**
+- `isOpen`: Control de visibilidad
+- `title`: Título
+- `message`: Mensaje
+- `type`: success | error
+- `onClose`: Callback al cerrar
+
+### 5. Navigation
+Barra de navegación responsive.
 
 **Características:**
-- Logo clicable
-- Enlaces de navegación
-- Menú hamburguesa automático en pantallas < 768px
-- Animación suave del menú
+- Links simples (scroll a secciones)
+- Design System link (navega a otro componente)
+- Menú hamburguesa en mobile
+- Estilos activos
 
-### Footer
-Pie de página con información, enlaces rápidos y redes sociales.
+### 6. ContactForm
+Formulario de contacto con validaciones.
+
+**Validaciones:**
+- ✅ Campos requeridos
+- ✅ Validación de email
+- ✅ Mensajes de error claros
+- ✅ Feedback visual
+
+## ✨ Características Principales
+
+### Navegación
+- **Links Simples:** Inicio, Destinos, Servicios, Contacto (scroll)
+- **Design System:** Enlace especial que navega al componente
+- **Menu Responsive:** Hamburguesa en pantallas < 768px
+
+### Home Page
+- Hero section atractivo
+- Sección de servicios
+- Grid de destinos con cards
+- Formulario de contacto
+- Footer
+
+### Design System
+Página dedicada que documenta y muestra:
+- **Paleta de colores** - Definición de colores del sistema
+- **Tipografía** - Headings (h1-h3) y body text
+- **Espaciado** - Sistema de espaciado (8-60px)
+- **Botones** - Todas las variantes y tamaños
+- **Tarjetas** - Ejemplos de cards
+- **Iconos** - Todos los tipos disponibles
+- **Modal** - Demostración interactiva
+- **Formulario** - Ejemplo funcional
 
 ## 📱 Responsive Design
 
-El proyecto es completamente responsive con puntos de quiebre en:
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
+El proyecto es completamente responsive:
 
-### Características Responsive:
-- Menú hamburguesa en mobile
-- Grid adaptable (1-3 columnas)
+| Dispositivo | Ancho | Características |
+|-------------|-------|-----------------|
+| Mobile | < 768px | 1 columna, hamburguesa |
+| Tablet | 768px - 1024px | 2 columnas |
+| Desktop | > 1024px | 3+ columnas |
+
+**Características responsive:**
+- Menú hamburguesa automático
+- Grid adaptable
 - Tipografía escalada
 - Imágenes optimizadas
 
-## 🎯 Secciones de la Landing Page
-
-### Hero Section
-Introduce la marca con un mensaje atractivo y llamada a acción.
-
-### Servicios
-Muestra 4 servicios principales con iconos y descripciones.
-
-### Destinos
-Grid de 6 destinos populares en cards interactivas con:
-- Imagen con zoom en hover
-- Calificación
-- Precio
-- Descripción
-
-### Formulario de Contacto
-Formulario funcional con:
-- Validación HTML5
-- Campos: Nombre, Email, Teléfono, Destino, Mensaje
-- Confirmación al enviar
-
 ## 🎨 Paleta de Colores
 
-```css
---primary-color: #007bff    (Azul)
---secondary-color: #ff6b6b  (Rojo)
---accent-color: #ffc107     (Amarillo)
---dark-color: #1a1a1a       (Negro)
---light-color: #f9f9f9      (Gris claro)
+| Color | Valor | Uso |
+|-------|-------|-----|
+| Primary | #007bff | Botones, links, accents |
+| Accent | #ffc107 | Highlights, calls to action |
+| Dark | #1a1a1a | Texto principal |
+| Light | #f9f9f9 | Fondos |
+
+## 🛠️ Instalación y Uso
+
+### Requisitos
+- Node.js v16 o superior
+- npm o yarn
+
+### Pasos
+
+```bash
+# 1. Clonar repositorio
+git clone https://github.com/usuario/landing-page-react.git
+
+# 2. Navegar al proyecto
+cd landing-page-react
+
+# 3. Instalar dependencias
+npm install
+
+# 4. Iniciar servidor de desarrollo
+npm run dev
+# Disponible en http://localhost:5173
+
+# 5. Build para producción
+npm run build
+
+# 6. Previsualizar build
+npm run preview
 ```
 
-## 📦 Tecnologías
+## 📚 Conceptos Implementados
 
-- **React 18+** - Librería UI
-- **Vite** - Build tool y dev server
-- **CSS3** - Estilos (flexbox, grid, animaciones)
-- **HTML5** - Estructura
+### Hooks React
+- `useState` - Manejo de estado
+- `useRef` - Referencias a DOM
 
-## 🔄 Flujo de Trabajo
+### Componentización
+- Props y propTypes
+- Componentes funcionales
+- Conditional rendering
 
-1. Los componentes están en `src/components/`
-2. Las páginas están en `src/pages/`
-3. El layout principal envoltura todo en `src/layouts/`
-4. Los estilos globales están en `src/styles/global.css`
-5. Cada componente tiene su propio CSS modular
+### Navegación
+- Cambio de componentes con estado
+- Scroll a secciones con refs
+- Menú responsive con toggles
 
-## 📝 Notas Importantes
+### Validaciones
+- Validación en frontend
+- Feedback visual
+- Manejo de errores
 
-- Los componentes son reutilizables y modulares
-- Cada componente tiene su propio archivo CSS
-- Las imágenes de ejemplo son de Unsplash (cambiar en producción)
-- Validación en frontend para el formulario
-- Diseño completamente responsive
+## 🚀 Despliegue
 
-## 🚀 Próximos Pasos
+### Opciones de despliegue:
+- **Vercel** (recomendado)
+- **Netlify**
+- **GitHub Pages**
+- **Firebase Hosting**
 
-- [ ] Conectar a backend real
-- [ ] Integrar Google Maps para destinos
-- [ ] Agregar más destinos
-- [ ] Implementar carrito de compras
-- [ ] Sistema de autenticación
-- [ ] Dashboard de reservas
+### Con Vercel:
+```bash
+npm install -g vercel
+vercel
+```
+
+## 📝 Validaciones del Formulario
+
+El formulario incluye:
+- ✅ Validación de campos requeridos
+- ✅ Validación de formato email
+- ✅ Mensajes de error descriptivos
+- ✅ Confirmación visual de envío
+- ✅ Reset de formulario
+
+## 🔍 Características del Código
+
+- **Modularidad:** Componentes independientes
+- **Reutilización:** Máxima reutilización de componentes
+- **Escalabilidad:** Fácil agregar nuevas funcionalidades
+- **Mantenibilidad:** CSS modular por componente
+- **Legibilidad:** Código limpio y bien organizado
+
+## 📦 Tecnologías Utilizadas
+
+- **React 19.2.6** - Librería UI
+- **Vite 8.0.12** - Build tool
+- **CSS3** - Estilos (flexbox, grid)
+- **react-icons** - Librería de iconos
+- **HTML5** - Estructura semántica
+
+## 🎓 Aspectos Técnicos a Destacar
+
+### En el desarrollo:
+1. **Componentes reutilizables** - Button con variantes, sizes
+2. **Estado global** - App maneja navegación
+3. **Props drilling** - Paso de props a través de MainLayout
+4. **Conditional rendering** - Muestra Home o DesignSystem
+5. **Event handling** - Clicks, form submission
+6. **Responsive design** - Mobile-first approach
+
+### En el Design System:
+1. **Documentación visual** - Muestra todos los componentes
+2. **Variantes** - Botones en diferentes estados
+3. **Tokens** - Colores y espaciado definidos
+4. **Ejemplos vivos** - Componentes interactivos
+
+## 📋 Checklist de Entrega
+
+- ✅ Landing page funcional y responsive
+- ✅ Componentes reutilizables desarrollados
+- ✅ Formulario con validaciones
+- ✅ Design System documentado
+- ✅ Código limpio y organizado
+- ✅ Proyecto desplegado
+- ✅ Repositorio en GitHub
+- ✅ README completo
+
+## 🐛 Notas Importantes
+
+- Los componentes son totalmente reutilizables
+- Cada componente tiene su CSS modular
+- Las imágenes son de Unsplash (cambiar en producción)
+- El código sigue buenas prácticas
+- Totalmente responsive
+- Compatible con React 19+
 
 ---
 
-**Proyecto de Landing Page - Viajes**  
-Desarrollado con React + Vite - 2024
+**Proyecto de Landing Page - TravelGo**  
+Desarrollado con React + Vite | 2026

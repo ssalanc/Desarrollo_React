@@ -1,7 +1,7 @@
 import Card from '../components/Card/Card';
-import Icon from '../components/Icon/Icon';
+import ServiceItem from '../components/ServiceItem/ServiceItem';
 import ContactForm from '../components/ContactForm/ContactForm';
-import Button from '../components/Button/Button';
+import Hero from '../components/Hero/Hero';
 import './Home.css';
 
 const destinations = [
@@ -52,14 +52,22 @@ const destinations = [
     description: 'Playas vírgenes, fauna única y aventura en el fin del mundo.',
     price: 1800,
     rating: 4.9
+  },
+  {
+    id: 7,
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=250&fit=crop',
+    title: 'Tokio, Japón',
+    description: 'Sumérgete en la fusión de lo tradicional y lo moderno en esta vibrante metrópolis.',
+    price: 1500,
+    rating: 4.9
   }
 ];
 
 const services = [
-  { title: 'Vuelos Internacionales', description: 'Acceso a vuelos de las mejores aerolíneas del mundo', icon: 'flights' },
-  { title: 'Hospedaje Premium', description: 'Alojamiento en hoteles de lujo seleccionados', icon: 'hotel' },
-  { title: 'Alquiler de Autos', description: 'Vehículos de calidad para explorar a tu ritmo', icon: 'car' },
-  { title: 'Tours Guiados', description: 'Experiencias culturales con guías profesionales', icon: 'compass' }
+  { id: 1, title: 'Vuelos Internacionales', description: 'Acceso a vuelos de las mejores aerolíneas del mundo', icon: 'flights' },
+  { id: 2, title: 'Hospedaje Premium', description: 'Alojamiento en hoteles de lujo seleccionados', icon: 'hotel' },
+  { id: 3, title: 'Alquiler de Autos', description: 'Vehículos de calidad para explorar a tu ritmo', icon: 'car' },
+  { id: 4, title: 'Tours Guiados', description: 'Experiencias culturales con guías profesionales', icon: 'compass' }
 ];
 
 export default function Home() {
@@ -71,27 +79,20 @@ export default function Home() {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section id="home" className="hero">
-        <div className="hero-content">
-          <h1>Descubre el Mundo con TravelGo</h1>
-          <p>Tus aventuras soñadas comenzarán aquí. Explora destinos increíbles a precios inigualables.</p>
-          <Button variant="primary" size="large" onClick={scrollToForm}>
-            Contáctenos
-          </Button>
-        </div>
-      </section>
+      <Hero onContactClick={scrollToForm} />
 
       {/* Servicios */}
       <section id="servicios" className="services section-padding">
         <div className="container">
           <h2>Nuestros Servicios</h2>
           <div className="services-grid">
-            {services.map((service, idx) => (
-              <div key={idx} className="service-item">
-                <Icon type={service.icon} size="large" />
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
+            {services.map(service => (
+              <ServiceItem
+                key={service.id}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+              />
             ))}
           </div>
         </div>

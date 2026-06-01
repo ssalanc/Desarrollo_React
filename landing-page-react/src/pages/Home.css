@@ -1,52 +1,4 @@
-.hero {
-  background: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop') center/cover no-repeat;
-  background-attachment: fixed;
-  color: white;
-  padding: 120px 20px;
-  text-align: center;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  animation: fadeInDown 0.8s ease;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-  animation: fadeInUp 0.8s ease;
-  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
-  color: #000;
-  font-weight: 500;
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* Servicios */
 .services {
@@ -66,33 +18,7 @@
   gap: 30px;
 }
 
-.service-item {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 30px;
-  border-radius: var(--border-radius);
-  text-align: center;
-  transition: var(--transition);
-  border-left: 4px solid var(--primary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.service-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.service-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: var(--dark-color);
-}
-
-.service-item p {
-  color: #666;
-  line-height: 1.6;
-}
 
 /* Destinos */
 .destinations {
@@ -187,18 +113,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
 
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .hero {
-    padding: 80px 20px;
-    min-height: 400px;
-  }
 
   .services h2,
   .destinations h2,
